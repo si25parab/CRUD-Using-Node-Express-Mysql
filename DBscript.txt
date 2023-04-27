@@ -1,0 +1,15 @@
+//create table category
+CREATE TABLE categories (
+  CategoryId INT PRIMARY KEY AUTO_INCREMENT,
+  CategoryName VARCHAR(50) NOT NULL
+);
+
+
+//create table product
+CREATE TABLE products (
+  ProductId INT PRIMARY KEY AUTO_INCREMENT,
+  ProductName VARCHAR(50) NOT NULL,
+  CategoryName VARCHAR(50) NOT NULL,
+  CategoryId INT NOT NULL,
+  FOREIGN KEY (CategoryId) REFERENCES categories(CategoryId)
+);
